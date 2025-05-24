@@ -34,7 +34,7 @@ const restaurants = [
     name: 'Pastas La Trattoria',
     description: 'Especialistas en pastas, ven y disfruta de todo tipo de pastas en un ambiente agradable, tranquilo y acogedor.',
     address: 'Calle 10A #36-08, El Poblado, Medellín',
-    image: 'https://www.vidavida.de/wp-content/uploads/2017/05/Pasta_mit_Lupinen_Bolognese_kw21_2017.jpg.jpg' 
+    image: 'https://www.vidavida.de/wp-content/uploads/2017/05/Pasta_mit_Lupinen_Bolognese_kw21_2017.jpg' 
   }
 ];
 
