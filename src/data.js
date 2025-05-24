@@ -18,7 +18,7 @@ const restaurants = [
   {
     id: '3',
     name: 'Sushi Zen',
-    description: 'Expertos en comida japonesa, ven y disfruta de sushi rolls, sashimi, unagi, ramen y mucho mas.',
+    description: 'Expertos en comida japonesa, podrás disfrutas de sushi rolls, sashimi, unagi, ramen y mucho más.',
     address: 'Avenida El Poblado #5A-26, Castropol, Medellín',
     image: 'https://img.chilango.com/2017/10/sushi-zen.jpg' 
   },
