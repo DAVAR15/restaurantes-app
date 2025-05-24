@@ -3,7 +3,7 @@
 const restaurants = [
   {
     id: '1',
-    name: 'El Fogon Paisa',
+    name: 'Restaurante El Fogon Paisa',
     description: 'Auténtica comida colombiana.',
     address: 'Calle 10 #34-23, El Poblado, Medellín',
     image: 'https://d1uz88p17r663j.cloudfront.net/original/1570939e9f814bec82c668279513c94f_BANDEJA-PAISA.jpg' 
@@ -24,14 +24,14 @@ const restaurants = [
   },
   {
     id: '4',
-    name: 'Burger Joint',
-    description: 'Ven y disfruta de las mejores hamburguesas gourmet de la ciudad, nos especializamos en hamburguesas y batidos.',
+    name: 'Hamburguesas Burger Joint',
+    description: 'Disfruta de las mejores hamburguesas gourmet de la ciudad, nos especializamos en hamburguesas y batidos.',
     address: 'Circular 74B #39B-12, Laureles, Medellín',
     image: 'https://th.bing.com/th/id/R.9f6727a70076f53071b9bfae3a98563b?rik=xrv9pfaoom3RdQ&pid=ImgRaw&r=0' 
   },
   {
     id: '5',
-    name: 'La Trattoria',
+    name: 'Pastas La Trattoria',
     description: 'Especialistas en pasta, ven y disfruta de todo tipo de pastas en un ambiente tranquilo y acogedor.',
     address: 'Calle 10A #36-08, El Poblado, Medellín',
     image: 'https://www.trattoria.com.co/img/banner/ensalada.jpg' 

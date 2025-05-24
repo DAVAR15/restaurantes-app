@@ -1,15 +1,20 @@
 
 
 import React from 'react';
+
 // REMOVED: import restaurantsData from '../data'; // This line should be removed or commented out
 
 // HomePage now expects 'restaurants' as a prop
 function HomePage({ restaurants }) { // <--- This line is critical: it accepts 'restaurants' as a prop
+  
   return (
     <div>
       <h2>All Restaurants</h2>
       <div className="row">
+
+
         {/* Use the 'restaurants' prop passed from App.js */}
+
 
         {restaurants.map((restaurant) => (
           <div key={restaurant.id} className="col-md-4 mb-4">
