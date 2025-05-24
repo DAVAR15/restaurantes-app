@@ -9,10 +9,9 @@ function NewRestaurantPage({ onAddRestaurant }) {
   const [image, setImage] = useState('');
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevent default form submission behavior (page reload)
+    e.preventDefault(); 
 
-    // Basic validation
-    if (!name || !description || !address || !image) {
+      if (!name || !description || !address || !image) {
       alert('Please fill in all fields.');
       return;
     }

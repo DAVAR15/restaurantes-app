@@ -31,15 +31,12 @@ function App() {
       <header className="bg-primary text-white p-3 mb-4">
         <div className="container">
           <h1>Restaurants App</h1>
-
-          
-          
          <nav className="navbar navbar-expand-lg navbar-dark">
             <ul className="navbar-nav mr-auto">
               <li className="nav-item">
                 <a className="nav-link" href="#" onClick={() => setCurrentPage('home')}>Home</a>
-              </li>
-              <li className="nav-item">
+                </li>
+                 <li className="nav-item">
                 <a className="nav-link" href="#" onClick={() => setCurrentPage('search')}>Search Restaurants</a> {/* New link */}
               </li>
               <li className="nav-item">
@@ -47,8 +44,6 @@ function App() {
               </li>
             </ul>
           </nav>
-          
-          
         </div>
       </header>
       <main className="container">

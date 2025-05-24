@@ -1,11 +1,9 @@
-
-
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif; /* Aplica la fuente Poppins */
+  font-family: 'Poppins', sans-serif; /* Poppins font */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f9fa; /* Un fondo gris claro para el cuerpo */
+  background-color: #f8f9fa; /* dark grey body */
 }
 
 code {
@@ -13,7 +11,7 @@ code {
     monospace;
 }
 
-/* Ajustes generales para enlaces y títulos */
+/* General adjustments for links and titles */
 a.nav-link {
   font-weight: 500; /* Medium weight for nav links */
   transition: color 0.3s ease;
@@ -28,13 +26,13 @@ h1, h2, h3, h4, h5, h6 {
   color: #343a40; /* Darker text for titles */
 }
 
-/* Algunos estilos generales para el contenedor principal */
+/* General syles for the main containers */
 .container {
   padding-top: 20px;
   padding-bottom: 20px;
 }
 
-/* Estilo para el header */
+/* Header style */
 .App-header {
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow*/
 }
