@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 
 function NewRestaurantPage({ onAddRestaurant }) {
-  // State variables to hold form input values
+
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [address, setAddress] = useState('');
@@ -18,30 +18,28 @@ function NewRestaurantPage({ onAddRestaurant }) {
 
     // Create a new restaurant object
     const newRestaurant = {
-      id: String(Math.floor(Math.random() * 100000)), // Simple unique ID for now
-      name,
+      name: name.ToLowerCase(), // Convert name to lowercase for consistency when saving and searching.
       description,
       address,
       image,
     };
 
-    // Call the function passed from App.js to add the new restaurant
+
     onAddRestaurant(newRestaurant);
 
-    // Clear the form fields after submission
     setName('');
     setDescription('');
     setAddress('');
     setImage('');
 
-    alert('Restaurant added successfully!'); // Provide user feedback
+    alert('Restaurant added successfully!');
   };
 
   return (
     <div>
       <h2>Add New Restaurant</h2>
       <form onSubmit={handleSubmit}>
-        <div className="mb-3"> {/* Bootstrap form group */}
+        <div className="mb-3"> 
           <label htmlFor="name" className="form-label">Name</label>
           <input
             type="text"
@@ -77,7 +75,7 @@ function NewRestaurantPage({ onAddRestaurant }) {
         <div className="mb-3">
           <label htmlFor="image" className="form-label">Image URL</label>
           <input
-            type="url" // Use type="url" for image URLs
+            type="url" 
             className="form-control"
             id="image"
             value={image}

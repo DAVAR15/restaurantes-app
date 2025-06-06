@@ -1,48 +1,85 @@
-
 import React, { useState, useEffect } from 'react';
 
-function SearchPage({ restaurants }) {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+import { searchRestaurantsByName } from '../firebaseService';
 
-  // useEffect to filter restaurants whenever searchTerm or restaurants prop changes
+function SearchPage() {
+  const [searchTerm, setSearchTerm] = useState('');
+  const [results, setResults] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    const results = restaurants.filter(restaurant =>
-      restaurant.name.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-    setFilteredRestaurants(results);
-  }, [searchTerm, restaurants]); // Dependencies: re-run effect if these change
+    if (searchTerm.trim() === '') {
+      setResults([]);
+      return;
+    }
+
+    setLoading(true);
+    setError(null);
+
+    const handler = setTimeout(async () => {
+      try {
+       
+        const lowercasedSearchTerm = searchTerm.toLowerCase().trim(); 
+        const data = await searchRestaurantsByName(lowercasedSearchTerm);
+        setResults(data);
+      } catch (err) {
+        console.error("Error al realizar la búsqueda en Firestore:", err);
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
+    }, 500);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [searchTerm]);
+
+  const handleSearchSubmit = (e) => {
+      e.preventDefault();
+
+  };
 
   return (
     <div>
-      <h2>Search Restaurants</h2>
-      <div className="mb-4">
-        <input
-          type="text"
-          className="form-control"
-          placeholder="Search by restaurant name..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-      </div>
+      <h2>Buscar Restaurantes</h2>
+      <form onSubmit={handleSearchSubmit} className="mb-4">
+        <div className="input-group">
+          <input
+            type="text"
+            className="form-control"
+            placeholder="Buscar por nombre..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <button type="submit" className="btn btn-primary">Buscar</button>
+        </div>
+      </form>
+
+      {loading && <p>Buscando restaurantes...</p>}
+      {error && <p>Error al buscar: {error.message}</p>}
+
+      {!loading && !error && results.length === 0 && searchTerm.trim() !== '' && (
+        <p className="text-center w-100">No se encontraron restaurantes que coincidan con la búsqueda.</p>
+      )}
+      {!loading && !error && results.length === 0 && searchTerm.trim() === '' && (
+        <p className="text-center w-100">Escribe un nombre para buscar.</p>
+      )}
 
       <div className="row">
-        {filteredRestaurants.length > 0 ? (
-          filteredRestaurants.map((restaurant) => (
-            <div key={restaurant.id} className="col-md-4 mb-4">
-              <div className="card h-100 shadow-sm">
-                <img src={restaurant.image} className="card-img-top" alt={restaurant.name} />
-                <div className="card-body">
-                  <h5 className="card-title">{restaurant.name}</h5>
-                  <p className="card-text">{restaurant.description}</p>
-                  <p className="card-text"><small className="text-muted">{restaurant.address}</small></p>
-                </div>
+        {results.map((restaurant) => (
+          <div key={restaurant.id} className="col-md-4 mb-4">
+            <div className="card h-100 shadow-sm">
+              {restaurant.image && <img src={restaurant.image} className="card-img-top" alt={restaurant.name} />}
+              <div className="card-body">
+                <h5 className="card-title">{restaurant.name}</h5>
+                <p className="card-text">{restaurant.description}</p>
+                <p className="card-text"><small className="text-muted">{restaurant.address}</small></p>
               </div>
             </div>
-          ))
-        ) : (
-          <p className="text-center w-100">No restaurants found matching your search.</p>
-        )}
+          </div>
+        ))}
       </div>
     </div>
   );

@@ -1,59 +1,56 @@
 
-
 .App-header {
-  background-color: #007bff; /* Un azul más vibrante para el primario */
-  padding: 1.5rem 0; /* Más padding vertical */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  background-color: #417627; 
+  padding: 1.5rem 0; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 
 .App-header h1 {
   margin-bottom: 0;
-  color: #fff; /* Asegura que el título sea blanco */
+  color: #fff; 
 }
 
 .App-header .navbar-brand {
-  color: #fff; /* Asegura que el texto de la marca sea blanco */
+  color: #fff; 
 }
 
-/*Estilo barra*/
+/*Var style*/
 .App-header .navbar-nav .nav-item {
-    margin-right: 0.75rem; /* Un poco más de espacio */
+    margin-right: 0.75rem;
 }
 .App-header .navbar-nav .nav-link {
     color: rgba(255, 255, 255, 0.85);
-    padding: 0.75rem 1.25rem; /* Más padding para un botón más grande */
-    border-radius: 0.5rem; /* Bordes redondeados */
+    padding: 0.75rem 1.25rem; 
+    border-radius: 0.5rem; 
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .App-header .navbar-nav .nav-link:hover,
 .App-header .navbar-nav .nav-link.active {
     color: #fff;
-    background-color: rgba(255, 255, 255, 0.2); /* Fondo más visible */
+    background-color: rgba(255, 255, 255, 0.2); 
 box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.3);
-    /*Sombra exterior blanca */  
-        /* transform: translateY(-1px); */
+   
 
 }
 
 
-/* Estilo para el contenedor principal de contenido */
+
 .container {
-    max-width: 1200px; /* Limita el ancho del contenido */
-    padding-top: 20px; /* Espacio superior */
-    padding-bottom: 20px; /* Espacio inferior */
+    max-width: 1200px; 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
 }
 
-/* Algunos ajustes para los títulos de las páginas */
+
 main h2 {
     font-size: 2.2rem;
     margin-bottom: 1.5rem;
-    color: #007bff; /* Color azul para los títulos de sección */
-    text-align: center; /* Centrar títulos */
+    color: #417627; 
+    text-align: center; 
 }
 
 /* --- START OF CARD STYLES --- */
-/* Estilos para las tarjetas de restaurantes */
 .card {
   border: none;
   border-radius: 0.75rem;
@@ -78,7 +75,7 @@ main h2 {
 
 .card-title {
   font-size: 1.35rem;
-  color: #007bff;
+  color: #417627;
   margin-bottom: 0.75rem;
 }
 
@@ -99,11 +96,7 @@ main h2 {
     overflow: hidden;
     text-overflow: ellipsis;
 }
-/* --- END OF CARD STYLES --- */
 
-
-/* --- START OF FORM STYLES --- */
-/* Estilos para el formulario de nuevo restaurante */
 .form-new-restaurant {
     background-color: #fff;
     max-width: 600px;
@@ -140,4 +133,3 @@ main h2 {
     background-color: #0056b3;
     border-color: #004085;
 }
-/* --- END OF FORM STYLES --- */
