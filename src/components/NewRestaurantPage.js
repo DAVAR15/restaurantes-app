@@ -18,7 +18,7 @@ function NewRestaurantPage({ onAddRestaurant }) {
 
     // Create a new restaurant object
     const newRestaurant = {
-      name: name.ToLowerCase(), // Convert name to lowercase for consistency when saving and searching.
+      name: name.toLowerCase(), // Convert name to lowercase for consistency when saving and searching.
       description,
       address,
       image,
